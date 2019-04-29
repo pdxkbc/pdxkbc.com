@@ -1,7 +1,7 @@
-# pdxkbc.com
+# Portland Keyboard Club
 
 https://pdxkbc.com
 
 ## Development
 
-You can 
+Just edit the files in the `src` folder and deploy them to a static site host.
