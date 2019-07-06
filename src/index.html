@@ -90,14 +90,20 @@
           href="https://calendar.google.com/calendar?cid=OXQ2NnZtcTY2OW1ia2J0Y2tidDBuOWsxZWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
           >Google Calendar</a
         >
-        for more event details.
+        for more meetup details.
       </p>
 
-      <iframe
+      <h2>Next meetup</h2>
+
+      <blockquote id="next-meetup" class="bl bw1 ml0 pl4 b--white-20 i">
+        Loading next meetup...
+      </blockquote>
+
+      <!-- <iframe
         class="gcal-iframe border-box db bg-white ba br3 b--mid-gray bw2"
         src="https://calendar.google.com/calendar/embed?height=200&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=OXQ2NnZtcTY2OW1ia2J0Y2tidDBuOWsxZWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23AD1457&amp;mode=AGENDA&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;showNav=0&amp;showTitle=0&amp;showPrint=0&amp;showDate=0&amp;title=PDXKBC"
         scrolling="no"
-      ></iframe>
+      ></iframe> -->
 
       <h2>Let's talk</h2>
 
@@ -144,5 +150,70 @@
         >
       </p>
     </footer>
+    <script type="module">
+      const root = document.getElementById("next-meetup");
+      const html = String.raw;
+
+      async function getMeetup() {
+        const calendarID =
+          "9t66vmq669mbkbtckbt0n9k1ek@group.calendar.google.com";
+        const API_KEY = "AIzaSyCntMy61tYlDNVg8ZhJXhjQqG3RkGzhnSk";
+        const date = new Date();
+        date.setHours(0, 0, 0, 0);
+        const timeMin = date.toISOString();
+        date.setMonth(date.getMonth() + 1);
+        const timeMax = date.toISOString();
+        const params = new URLSearchParams({
+          orderBy: "startTime",
+          singleEvents: true,
+          timeMin,
+          timeMax,
+          key: API_KEY
+        });
+        const url = `https://content.googleapis.com/calendar/v3/calendars/${calendarID}/events?${params}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        if (!data.items[0]) {
+          throw new Error("failed to load meetup");
+        }
+        return data.items[0];
+      }
+
+      async function main() {
+        try {
+          showMeetup(await getMeetup());
+        } catch (err) {
+          console.error(err);
+          showError();
+        }
+      }
+
+      const dateFormatter = Intl.DateTimeFormat(undefined, {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+      });
+
+      function showMeetup(meetup) {
+        root.innerHTML = html`
+          <span data-slot="summary"></span><br />
+          <span data-slot="date"></span><br /><br />
+          <span data-slot="location"></span>
+        `;
+        root.querySelector("[data-slot=summary]").textContent = meetup.summary;
+        root.querySelector("[data-slot=location]").textContent = meetup.location;
+        root.querySelector(
+          "[data-slot=date]"
+        ).textContent = dateFormatter.format(new Date(meetup.start.dateTime));
+      }
+
+      function showError() {
+        root.textContent =
+          "Oops, something went wrong loading from Google Calendar.";
+      }
+
+      main();
+    </script>
   </body>
 </html>
