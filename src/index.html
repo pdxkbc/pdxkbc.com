@@ -119,10 +119,10 @@
       const root = document.getElementById("next-meetup");
       const html = String.raw;
 
-      async function getMeetup() {
+      async function getNextMeetup() {
         const calendarID =
           "9t66vmq669mbkbtckbt0n9k1ek@group.calendar.google.com";
-        const API_KEY = "AIzaSyCntMy61tYlDNVg8ZhJXhjQqG3RkGzhnSk";
+        const key = "AIzaSyCntMy61tYlDNVg8ZhJXhjQqG3RkGzhnSk";
         const date = new Date();
         date.setHours(0, 0, 0, 0);
         const timeMin = date.toISOString();
@@ -133,20 +133,22 @@
           singleEvents: true,
           timeMin,
           timeMax,
-          key: API_KEY
+          key
         });
-        const url = `https://content.googleapis.com/calendar/v3/calendars/${calendarID}/events?${params}`;
+        const prefix = "https://content.googleapis.com/calendar/v3";
+        const url = `${prefix}/calendars/${calendarID}/events?${params}`;
         const response = await fetch(url);
         const data = await response.json();
-        if (!data.items[0]) {
+        const nextMeetup = data.items[0];
+        if (!nextMeetup) {
           throw new Error("failed to load meetup");
         }
-        return data.items[0];
+        return nextMeetup;
       }
 
       async function main() {
         try {
-          showMeetup(await getMeetup());
+          showMeetup(await getNextMeetup());
         } catch (err) {
           console.error(err);
           showError();
