@@ -145,8 +145,8 @@
     <footer class="bt b--white-10 bw1 ma0 ph3 pv3 f5a lh-title tc ttu">
       <p class="mw7 ma0 center">
         &copy; 2019
-        <a class="light-red hover-red" href="https://mockbrian.com/"
-          >Brian Mock</a
+        <a class="light-red hover-red" href="https://github.com/pdxkbc"
+          >PDXKBC</a
         >
       </p>
     </footer>
@@ -202,7 +202,8 @@
           <span data-slot="location"></span>
         `;
         root.querySelector("[data-slot=summary]").textContent = meetup.summary;
-        root.querySelector("[data-slot=location]").textContent = meetup.location;
+        root.querySelector("[data-slot=location]").textContent =
+          meetup.location;
         root.querySelector(
           "[data-slot=date]"
         ).textContent = dateFormatter.format(new Date(meetup.start.dateTime));
