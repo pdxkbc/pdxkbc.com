@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="sans-serif bg-dark-gray near-white min-vh-100 flex flex-column">
+    <h1 class="mv0 ph3 pv4 f1 lh-title b--white-20 bb bw1">
+      <div class="mw7 w-100 center ph3 flex-ns items-enter">
+        <div
+          style="height: 4rem; width: 4rem"
+          class="fl-ns bg-light-red black pa2 br2 mr3-ns mb3 mb0-ns flex"
+        >
+          <img src="/logo.svg" alt="pdxkbc" />
+        </div>
+        <a href="/" class="no-underline underline-hover color-inherit"
+          >Portland Keyboard Club</a
+        >
+      </div>
+    </h1>
+
+    <main class="center pa3 mw7 w-100 f3 lh-copy flex-auto">
+      {{ .Content }}
+    </main>
+
+    <footer class="bt b--white-10 bw1 ma0 ph3 pv3 f5a lh-title tc ttu">
+      <p class="mw7 w-100 ma0 center">
+        &copy; 2019
+        <a class="light-red hover-red" href="https://github.com/pdxkbc"
+          >PDXKBC</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
