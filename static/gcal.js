@@ -10,6 +10,7 @@ async function getNextMeetup() {
   date.setDate(1);
   date.setHours(0, 0, 0, 0);
   const timeMin = date.toISOString();
+  date.setDate(31);
   date.setMonth(date.getMonth() + 3);
   const timeMax = date.toISOString();
   const params = new URLSearchParams({
