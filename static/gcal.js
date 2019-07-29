@@ -45,7 +45,8 @@ const dateFormatter = Intl.DateTimeFormat(undefined, {
 });
 
 function showMeetup(root, meetup) {
-  root.replaceWith(
+  root.innerHTML = "";
+  root.append(
     meetup.summary,
     document.createElement("br"),
     meetup.location,
@@ -56,7 +57,7 @@ function showMeetup(root, meetup) {
 }
 
 function showError(root) {
-  root.replaceWith("Oops, something went wrong loading from Google Calendar.");
+  root.textContent = "Oops, something went wrong loading from Google Calendar.";
 }
 
 main();
