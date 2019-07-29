@@ -1,7 +1,14 @@
 export {};
 
-const root = document.getElementById("next-meetup");
-const html = String.raw;
+async function main() {
+  const root = document.getElementById("next-meetup");
+  try {
+    showMeetup(root, await getNextMeetup());
+  } catch (err) {
+    console.error(err);
+    showError(root);
+  }
+}
 
 async function getNextMeetup() {
   const calendarID = "9t66vmq669mbkbtckbt0n9k1ek@group.calendar.google.com";
@@ -31,15 +38,6 @@ async function getNextMeetup() {
   return nextMeetup;
 }
 
-async function main() {
-  try {
-    showMeetup(await getNextMeetup());
-  } catch (err) {
-    console.error(err);
-    showError();
-  }
-}
-
 const dateFormatter = Intl.DateTimeFormat(undefined, {
   weekday: "long",
   month: "long",
@@ -47,21 +45,19 @@ const dateFormatter = Intl.DateTimeFormat(undefined, {
   year: "numeric"
 });
 
-function showMeetup(meetup) {
-  root.innerHTML = html`
-    <span data-slot="summary"></span><br />
-    <span data-slot="date"></span><br /><br />
-    <span data-slot="location"></span>
-  `;
-  root.querySelector("[data-slot=summary]").textContent = meetup.summary;
-  root.querySelector("[data-slot=location]").textContent = meetup.location;
-  root.querySelector("[data-slot=date]").textContent = dateFormatter.format(
-    new Date(meetup.start.dateTime)
+function showMeetup(root, meetup) {
+  root.replaceWith(
+    meetup.summary,
+    document.createElement("br"),
+    meetup.location,
+    document.createElement("br"),
+    document.createElement("br"),
+    dateFormatter.format(new Date(meetup.start.dateTime))
   );
 }
 
-function showError() {
-  root.textContent = "Oops, something went wrong loading from Google Calendar.";
+function showError(root) {
+  root.replaceWith("Oops, something went wrong loading from Google Calendar.");
 }
 
 main();
