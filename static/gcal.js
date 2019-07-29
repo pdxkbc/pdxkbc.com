@@ -7,9 +7,10 @@ async function getNextMeetup() {
   const calendarID = "9t66vmq669mbkbtckbt0n9k1ek@group.calendar.google.com";
   const key = "AIzaSyCntMy61tYlDNVg8ZhJXhjQqG3RkGzhnSk";
   const date = new Date();
+  date.setDate(1);
   date.setHours(0, 0, 0, 0);
   const timeMin = date.toISOString();
-  date.setMonth(date.getMonth() + 1);
+  date.setMonth(date.getMonth() + 3);
   const timeMax = date.toISOString();
   const params = new URLSearchParams({
     orderBy: "startTime",
