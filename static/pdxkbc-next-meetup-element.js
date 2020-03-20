@@ -1,14 +1,24 @@
-export {};
-
-async function main() {
-  const root = document.getElementById("next-meetup");
-  try {
-    showMeetup(root, await getNextMeetup());
-  } catch (err) {
-    console.error(err);
-    showError(root);
+class PDXKBCNextMeetupElement extends HTMLElement {
+  async connectedCallback() {
+    try {
+      const meetup = await getNextMeetup();
+      this.innerHTML = "";
+      this.append(
+        meetup.summary,
+        document.createElement("br"),
+        meetup.location,
+        document.createElement("br"),
+        document.createElement("br"),
+        dateFormatter.format(new Date(meetup.start.dateTime))
+      );
+    } catch (err) {
+      console.error(err);
+      this.textContent = "Failed to load next meetup from Google Calendar.";
+    }
   }
 }
+
+customElements.define("pdxkbc-next-meetup", PDXKBCNextMeetupElement);
 
 async function getNextMeetup() {
   const calendarID = "9t66vmq669mbkbtckbt0n9k1ek@group.calendar.google.com";
@@ -44,20 +54,4 @@ const dateFormatter = Intl.DateTimeFormat(undefined, {
   year: "numeric"
 });
 
-function showMeetup(root, meetup) {
-  root.innerHTML = "";
-  root.append(
-    meetup.summary,
-    document.createElement("br"),
-    meetup.location,
-    document.createElement("br"),
-    document.createElement("br"),
-    dateFormatter.format(new Date(meetup.start.dateTime))
-  );
-}
-
-function showError(root) {
-  root.textContent = "Oops, something went wrong loading from Google Calendar.";
-}
-
-main();
+export {};

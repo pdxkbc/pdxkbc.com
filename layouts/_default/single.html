@@ -4,15 +4,15 @@
     {{ partial "head.html" . }}
   </head>
   <body class="sans-serif bg-white near-black min-vh-100 flex flex-column">
-    <h1 class="mv0 ph3 pv4 f1 lh-title bg-dark-blue white">
+    <h1 class="mv0 ph3 pv3 f2 lh-title bg-near-white bb b--black-10">
       <div class="mw7 w-100 center ph3 flex-ns items-center">
         <img
           src="/logo.svg"
           alt="pdxkbc"
-          style="height: 3rem; width: 3rem"
-          class="fl-ns bg-dark-green white pa2 br2 mr3-ns mb3 mb0-ns flex ba"
+          style="height: 2rem; width: 2rem"
+          class="fl-ns bg-dark-green white pa2 br2 mr3-ns mb3 mb0-ns flex"
         />
-        <a href="/" class="no-underline underline-hover color-inherit"
+        <a href="/" class="no-underline underline-hover dark-green"
           >Portland Keyboard Club</a
         >
       </div>
@@ -22,13 +22,15 @@
       {{ .Content }}
     </main>
 
-    <footer class="ma0 ph3 pv3 f5 lh-title tc bg-dark-green white">
-      <p class="mw7 w-100 ma0 center">
+    <footer
+      class="b ma0 ph3 pv3 f5 lh-title tc bg-near-white bt b--black-10"
+    >
+      <div class="mw7 w-100 ma0 center">
         &copy; {{ now.Format "2006" }}
-        <a class="white hover-light-gray" href="https://github.com/pdxkbc"
+        <a class="dark-green hover-green" href="https://github.com/pdxkbc"
           >PDXKBC</a
         >
-      </p>
+      </div>
     </footer>
   </body>
 </html>
