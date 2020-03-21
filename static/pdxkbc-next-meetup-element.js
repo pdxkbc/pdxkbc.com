@@ -2,13 +2,15 @@ class PDXKBCNextMeetupElement extends HTMLElement {
   async connectedCallback() {
     try {
       const meetup = await getNextMeetup();
+      // debugger;
       this.innerHTML = "";
+      const line = document.createElement("div");
+      line.className = "bt b--black-10 ma2";
       this.append(
         meetup.summary,
-        document.createElement("br"),
+        line.cloneNode(true),
         meetup.location,
-        document.createElement("br"),
-        document.createElement("br"),
+        line.cloneNode(true),
         dateFormatter.format(new Date(meetup.start.dateTime))
       );
     } catch (err) {
@@ -47,11 +49,12 @@ async function getNextMeetup() {
   return nextMeetup;
 }
 
-const dateFormatter = Intl.DateTimeFormat(undefined, {
+const dateFormatter = new Intl.DateTimeFormat(undefined, {
   weekday: "long",
   month: "long",
   day: "numeric",
-  year: "numeric"
+  hour: "numeric",
+  minute: "numeric"
 });
 
 export {};
