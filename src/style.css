@@ -1,0 +1,100 @@
+:root {
+  --color-main-bg: lavender;
+  --color-main-fg: midnightblue;
+  --color-link: blue;
+  --color-link-hover: darkblue;
+  --color-accent-bg: midnightblue;
+  --color-accent-fg: lavender;
+  --color-accent-link: white;
+  --color-scroll-bg: lavender;
+  --color-scroll-fg: midnightblue;
+  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next",
+    "Helvetica Neue", Roboto, Noto, "Segoe UI", Ubuntu, sans-serif;
+  background: var(--color-main-bg);
+  color: var(--color-main-fg);
+  scrollbar-color: var(--color-scroll-fg) var(--color-scroll-bg);
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-main-bg: hsl(240, 50%, 25%);
+    --color-main-fg: hsl(240, 60%, 85%);
+    --color-link: hsl(240, 50%, 95%);
+    --color-link-hover: hsl(240, 90%, 80%);
+    --color-accent-bg: hsl(240, 50%, 20%);
+    --color-accent-fg: hsl(240, 60%, 90%);
+    --color-accent-link: hsl(240, 50%, 95%);
+    --color-scroll-bg: hsl(240, 50%, 25%);
+    --color-scroll-fg: hsl(240, 60%, 85%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.content,
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+:any-link {
+  color: var(--color-link);
+}
+
+:any-link:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+h1 {
+  margin-top: 0;
+  background: var(--color-accent-bg);
+  color: var(--color-accent-fg);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+h1 .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+h1 :any-link {
+  text-decoration: none;
+}
+
+footer :any-link,
+h1 :any-link {
+  color: inherit;
+}
+
+footer :any-link:hover,
+h1 :any-link:hover {
+  color: var(--color-accent-link);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: var(--color-accent-bg);
+  color: var(--color-accent-fg);
+}
+
+.logo {
+  box-sizing: content-box;
+  background: lavender;
+  padding: 8px;
+  margin-right: 1rem;
+  border-radius: 2px;
+}
