@@ -1,3 +1,2 @@
 [build]
-publish = "public"
-command = "hugo"
+publish = "src"

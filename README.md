@@ -1,6 +1,6 @@
 # Portland Keyboard Club
 
-https://pdxkbc.com
+https://www.pdxkbc.com
 
 ## Development
 

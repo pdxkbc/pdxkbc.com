@@ -1,0 +1,77 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next",
+    "Helvetica Neue", Roboto, Noto, "Segoe UI", Ubuntu, sans-serif;
+  background: lavender;
+  color: midnightblue;
+  scrollbar-color: midnightblue lavender;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.content,
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+:any-link {
+  color: blue;
+}
+
+:any-link:hover {
+  color: darkblue;
+  text-decoration: underline;
+}
+
+h1 {
+  margin-top: 0;
+  color: lavender;
+  background: midnightblue;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+h1 .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+h1 :any-link {
+  text-decoration: none;
+}
+
+footer :any-link,
+h1 :any-link {
+  color: inherit;
+}
+
+footer :any-link:hover,
+h1 :any-link:hover {
+  color: white;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: lavender;
+  background: midnightblue;
+}
+
+.logo {
+  box-sizing: content-box;
+  background: lavender;
+  padding: 8px;
+  margin-right: 1rem;
+  border-radius: 2px;
+}

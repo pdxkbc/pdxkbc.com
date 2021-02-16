@@ -2,7 +2,6 @@ class PDXKBCNextMeetupElement extends HTMLElement {
   async connectedCallback() {
     try {
       const meetup = await getNextMeetup();
-      // debugger;
       this.innerHTML = "";
       const line = document.createElement("div");
       line.className = "bt b--black-10 ma2";
@@ -36,7 +35,7 @@ async function getNextMeetup() {
     singleEvents: true,
     timeMin,
     timeMax,
-    key
+    key,
   });
   const prefix = "https://content.googleapis.com/calendar/v3";
   const url = `${prefix}/calendars/${calendarID}/events?${params}`;
@@ -54,7 +53,7 @@ const dateFormatter = new Intl.DateTimeFormat(undefined, {
   month: "long",
   day: "numeric",
   hour: "numeric",
-  minute: "numeric"
+  minute: "numeric",
 });
 
 export {};
