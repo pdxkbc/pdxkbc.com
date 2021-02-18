@@ -1,13 +1,14 @@
 :root {
-  --color-main-bg: lavender;
-  --color-main-fg: midnightblue;
-  --color-link: blue;
-  --color-link-hover: darkblue;
-  --color-accent-bg: midnightblue;
-  --color-accent-fg: lavender;
-  --color-accent-link: white;
-  --color-scroll-bg: lavender;
-  --color-scroll-fg: midnightblue;
+  --color-logo-bg: hsl(240, 67%, 94%);
+  --color-main-bg: hsl(240, 67%, 94%);
+  --color-main-fg: hsl(240, 64%, 27%);
+  --color-link: hsl(240, 100%, 50%);
+  --color-link-hover: hsl(240, 100%, 27%);
+  --color-accent-bg: hsl(240, 64%, 27%);
+  --color-accent-fg: hsl(240, 67%, 94%);
+  --color-accent-link: hsl(0, 0%, 100%);
+  --color-scroll-bg: hsl(240, 50%, 90%);
+  --color-scroll-fg: hsl(240, 40%, 60%);
   font-family: -apple-system, BlinkMacSystemFont, "Avenir Next",
     "Helvetica Neue", Roboto, Noto, "Segoe UI", Ubuntu, sans-serif;
   background: var(--color-main-bg);
@@ -18,6 +19,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --color-logo-bg: hsl(240, 67%, 94%);
     --color-main-bg: hsl(240, 50%, 25%);
     --color-main-fg: hsl(240, 60%, 85%);
     --color-link: hsl(240, 50%, 95%);
@@ -25,8 +27,8 @@
     --color-accent-bg: hsl(240, 50%, 20%);
     --color-accent-fg: hsl(240, 60%, 90%);
     --color-accent-link: hsl(240, 50%, 95%);
-    --color-scroll-bg: hsl(240, 50%, 25%);
-    --color-scroll-fg: hsl(240, 60%, 85%);
+    --color-scroll-bg: hsl(240, 50%, 15%);
+    --color-scroll-fg: hsl(240, 40%, 60%);
   }
 }
 
@@ -37,10 +39,11 @@
 body {
   padding: 0;
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-y: scroll;
 }
 
 .content,
@@ -65,46 +68,87 @@ h2 {
   line-height: 1.15;
 }
 
-h1 {
+header {
   background: var(--color-accent-bg);
   color: var(--color-accent-fg);
   padding: 1rem 0;
   margin: 0;
-  margin-bottom: 2rem;
 }
 
-h1 .content {
+nav {
+  display: flex;
+}
+
+nav > * {
+  margin-left: 1rem;
+}
+
+nav > :first-child {
+  margin-left: 0;
+}
+
+header .content {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
 
-h1 :any-link {
+header :any-link {
   text-decoration: none;
 }
 
 footer :any-link,
-h1 :any-link {
+header :any-link {
   color: inherit;
+  font-weight: bold;
 }
 
 footer :any-link:hover,
-h1 :any-link:hover {
+header :any-link:hover {
   color: var(--color-accent-link);
+}
+
+ul {
+  padding-left: 1.5rem;
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
   background: var(--color-accent-bg);
   color: var(--color-accent-fg);
 }
 
 .logo {
+  background: var(--color-logo-bg);
   box-sizing: content-box;
-  background: lavender;
-  padding: 8px;
-  margin-right: 1rem;
+  padding: 3px;
   border-radius: 2px;
+}
+
+.gallery {
+  display: grid;
+  grid-gap: 2rem;
+  margin: 2rem 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+:focus {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 1.25rem;
+  }
 }
