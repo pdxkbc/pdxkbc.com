@@ -70,7 +70,6 @@ h1 {
   color: var(--color-accent-fg);
   padding: 1rem 0;
   margin: 0;
-  margin-bottom: 2rem;
 }
 
 h1 .content {
@@ -96,7 +95,6 @@ h1 :any-link:hover {
 footer {
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
   background: var(--color-accent-bg);
   color: var(--color-accent-fg);
 }
