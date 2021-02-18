@@ -108,3 +108,21 @@ footer {
   margin-right: 1rem;
   border-radius: 2px;
 }
+
+.gallery {
+  display: grid;
+  grid-gap: 2rem;
+  width: 600px;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  background: var(--color-accent-bg);
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
