@@ -121,7 +121,6 @@ figure {
 }
 
 figure img {
-  background: var(--color-accent-bg);
   width: 100%;
   height: auto;
   border-radius: 8px;
