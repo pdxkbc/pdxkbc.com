@@ -1,4 +1,5 @@
 :root {
+  --color-logo-bg: hsl(240, 67%, 94%);
   --color-main-bg: hsl(240, 67%, 94%);
   --color-main-fg: hsl(240, 64%, 27%);
   --color-link: hsl(240, 100%, 50%);
@@ -18,6 +19,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --color-logo-bg: hsl(240, 67%, 94%);
     --color-main-bg: hsl(240, 50%, 25%);
     --color-main-fg: hsl(240, 60%, 85%);
     --color-link: hsl(240, 50%, 95%);
@@ -119,8 +121,8 @@ footer {
 
 .logo {
   box-sizing: content-box;
-  background: lavender;
-  padding: 8px;
+  background: var(--color-logo-bg);
+  padding: 6px;
   margin-right: 1rem;
   border-radius: 2px;
 }
