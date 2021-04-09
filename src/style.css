@@ -82,20 +82,18 @@ header {
 
 nav {
   display: flex;
+  flex-direction: column;
 }
 
-nav > * {
-  margin-left: 1rem;
-}
-
-nav > :first-child {
-  margin-left: 0;
+nav > * + * {
+  margin: 0;
+  margin-top: 1rem;
 }
 
 header .content {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
 }
 
 header :any-link {
@@ -155,5 +153,14 @@ figure img {
 @media (min-width: 600px) {
   body {
     font-size: 1.25rem;
+  }
+
+  nav {
+    flex-direction: row;
+  }
+
+  nav > * + * {
+    margin: 0;
+    margin-left: 1rem;
   }
 }
