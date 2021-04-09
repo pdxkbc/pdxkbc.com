@@ -46,6 +46,11 @@ body {
   overflow-y: scroll;
 }
 
+hr {
+  border: 0;
+  border-top: 2px solid var(--color-main-fg);
+}
+
 .content,
 main {
   max-width: 600px;
@@ -133,7 +138,7 @@ footer {
 }
 
 figure {
-  margin: 0;
+  margin: 1rem 0;
 }
 
 figure img {
