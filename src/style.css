@@ -115,6 +115,11 @@ ul {
   padding-left: 1.5rem;
 }
 
+dt {
+  display: list-item;
+  list-style-type: disc;
+}
+
 footer {
   text-align: center;
   padding: 1rem;
