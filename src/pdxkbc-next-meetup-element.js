@@ -14,7 +14,7 @@ class PDXKBCNextMeetupElement extends HTMLElement {
       );
     } catch (err) {
       console.error(err);
-      this.textContent = "Failed to load next meetup from Google Calendar.";
+      this.textContent = "No meetup detected in the next 3 months.";
     }
   }
 }
