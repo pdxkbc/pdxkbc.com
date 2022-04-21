@@ -22,8 +22,8 @@ class PDXKBCNextMeetupElement extends HTMLElement {
 customElements.define("pdxkbc-next-meetup", PDXKBCNextMeetupElement);
 
 async function getNextMeetup() {
-  const calendarID = "9t66vmq669mbkbtckbt0n9k1ek@group.calendar.google.com";
-  const key = "AIzaSyCntMy61tYlDNVg8ZhJXhjQqG3RkGzhnSk";
+  const calendarID = "pdxkbc.staff@gmail.com";
+  const key = "AIzaSyD8jvZugPwnLkKbeqGREojTlwlVohvnpdc";
   const date = new Date();
   date.setHours(0, 0, 0, 0);
   const timeMin = date.toISOString();
