@@ -90,6 +90,10 @@ nav > * + * {
   margin-top: 1rem;
 }
 
+a {
+  border-radius: 4px;
+}
+
 header .content {
   display: flex;
   flex-wrap: wrap;
@@ -179,10 +183,15 @@ pre {
   border-radius: 8px;
   padding: 1rem;
   white-space: pre-wrap;
+  font-size: 1rem;
 }
 
 .keymap {
-  border-spacing: 8px;
+  border-spacing: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid;
+  box-shadow: 4px 4px 0 0 currentColor;
 }
 
 .keymap th,
