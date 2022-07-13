@@ -33,14 +33,14 @@
       <h1>PDXKBC Macropad</h1>
       <ul>
         <li><a href="#macropad">Overview</a></li>
-	<li><a href="#links">Links</a></li>
+        <li><a href="#links">Links</a></li>
         <li><a href="#parts_list">Parts List</a></li>
         <li><a href="#build_guide">Build Guide</a></li>
       </ul>
 
       <h2 id="macropad">Overview</h2>
       <figure>
-        <img src="macropad.jpg" width="600" height="657" />
+        <img src="macropad.jpg" width="600" height="657" alt="" />
         <figcaption>PDXKBC macropad designed and built by Franklin</figcaption>
       </figure>
 
@@ -61,35 +61,31 @@
 
       <h2 id="parts_list">Parts List</h2>
       <figure>
-        <img src="materials.jpg" width="600" height="400" alt="Parts needed to build the macropad"/>
+        <img
+          src="materials.jpg"
+          width="600"
+          height="400"
+          alt="Parts needed to build the macropad"
+        />
       </figure>
       <ul>
         <li>
-          Badge and Case PCBs (See <a href="#links">Links</a> section for source files)
+          Badge and Case PCBs (See <a href="#links">Links</a> section for source
+          files)
         </li>
+        <li>Standoffs:</li>
         <li>
-          Standoffs:
-        </li>
           <ul>
             <li>4&times; M4 10+6mm brass Male-Female Spacers</li>
             <li>4&times; M3 x 6mm screws</li>
             <li>4&times; M3 nuts</li>
           </ul>
-        <li>
-          1&times; 5v Arduino Pro Micro
         </li>
-        <li>
-          6&times; 1N4148 Diodes
-        </li>
-        <li>
-          4&times; Rubber Bumpers/Feet
-        </li>
-        <li>
-          6&times; PCB Mount Switches
-        </li>
-        <li>
-          6&times; 1u Keycaps
-        </li>
+        <li>1&times; 5v Arduino Pro Micro</li>
+        <li>6&times; 1N4148 Diodes</li>
+        <li>4&times; Rubber Bumpers/Feet</li>
+        <li>6&times; PCB Mount Switches</li>
+        <li>6&times; 1u Keycaps</li>
       </ul>
 
       <h2 id="build_guide">Build Guide</h2>
@@ -101,12 +97,11 @@
         <li>A phillips screwdriver</li>
         <li>Flush cutters</li>
       </ul>
-
       <h3>Assembly</h3>
       <h4>Diodes</h4>
       <p>Bend your diodes as shown:</p>
       <figure>
-        <img src="bentdiode.jpg" width="600" height="400" alt="Bent Diodes"/>
+        <img src="bentdiode.jpg" width="600" height="400" alt="Bent Diodes" />
       </figure>
       <p>
         Place your diodes with the black stripe on the diode facing the white
@@ -114,44 +109,90 @@
         falling out.
       </p>
       <figure>
-        <img src="placeddiode.jpg" width="600" height="400" alt="A diode in place"/>
+        <img
+          src="placeddiode.jpg"
+          width="600"
+          height="400"
+          alt="A diode in place"
+        />
       </figure>
       <figure>
-        <img src="diodes.jpg" width="600" height="400" alt="Diodes held in place with bent legs"/>
+        <img
+          src="diodes.jpg"
+          width="600"
+          height="400"
+          alt="Diodes held in place with bent legs"
+        />
       </figure>
       <p>Solder the diodes, and trim the legs with flush cutters.</p>
       <figure>
-        <img src="trimmeddiodes.jpg" width="600" height="400" alt="Diodes soldered and trimmed"/>
+        <img
+          src="trimmeddiodes.jpg"
+          width="600"
+          height="400"
+          alt="Diodes soldered and trimmed"
+        />
       </figure>
       <h4>Switches & Pro Micro</h4>
       <p>Place and solder the lower four switches</p>
       <figure>
-        <img src="fourswitches.jpg" width="600" height="400" alt="Lower four switches soldered in place"/>
-      <figure>
+        <img
+          src="fourswitches.jpg"
+          width="600"
+          height="400"
+          alt="Lower four switches soldered in place"
+        />
+      </figure>
       <p>
-        Tack on the two pin headers, fiddle with them until they're straight
-        and the pro micro fits on.
+        Tack on the two pin headers, fiddle with them until they're straight and
+        the pro micro fits on.
       </p>
       <figure>
-        <img src="tackedheader.jpg" width="600" height="400" alt="Headers tacked into place"/>
+        <img
+          src="tackedheader.jpg"
+          width="600"
+          height="400"
+          alt="Headers tacked into place"
+        />
       </figure>
       <figure>
-        <img src="testfit.jpg" width="600" height="400" alt="Pro Micro aligned on the headers"/>
-      <figure>
+        <img
+          src="testfit.jpg"
+          width="600"
+          height="400"
+          alt="Pro Micro aligned on the headers"
+        />
+      </figure>
       <p>Solder the pin header.</p>
       <figure>
-        <img src="solderedheaders.jpg" width="600" height="400" alt="Headers soldered"/>
+        <img
+          src="solderedheaders.jpg"
+          width="600"
+          height="400"
+          alt="Headers soldered"
+        />
       </figure>
       <p>Solder the top two switches.</p>
       <figure>
-        <img src="twoswitches.jpg" width="600" height="400" alt="Top two switches soldered"/>
+        <img
+          src="twoswitches.jpg"
+          width="600"
+          height="400"
+          alt="Top two switches soldered"
+        />
       </figure>
       <p>Solder the Pro Micro onto the headers</p>
       <figure>
-        <img src="solderedpromicro.jpg" width="600" height="400" alt="Pro Micro soldered"/>
+        <img
+          src="solderedpromicro.jpg"
+          width="600"
+          height="400"
+          alt="Pro Micro soldered"
+        />
       </figure>
       <h4>Flash the Pro Micro</h4>
-      <pre>$ git clone git@github.com:qmk/qmk_firmware.git
+      <pre>
+$ git clone git@github.com:qmk/qmk_firmware.git
 
 $ cd qmk_firmware
 
@@ -159,23 +200,26 @@ $ ./util/linux_install.sh
 
 $ sudo make pdxkbc:default:avrdude
 
-# short the RST and GND pins on the pro micro when prompted</pre>
+# short the RST and GND pins on the pro micro when prompted</pre
+      >
       <p>Also see the GitHub repo in the <a href="#links">Links</a> section.</p>
       <h4>Test the board</h4>
       <p>The default keymap is:</p>
       <table class="keymap">
-        <tr>
-          <td><code>PDXKBCREDDIT</code></td>
-          <td><code>PDXKBCDISCORD</code></td>
-        </tr>
-        <tr>
-          <td><code>BADGELIFE</code></td>
-          <td><code>HACKTHEPLANET</code></td>
-        </tr>
-        <tr>
-          <td><code>KC_VOLU</code></td>
-          <td><code>KC_VOLD</code></td>
-        </tr>
+        <tbody>
+          <tr>
+            <td><code>PDXKBCREDDIT</code></td>
+            <td><code>PDXKBCDISCORD</code></td>
+          </tr>
+          <tr>
+            <td><code>BADGELIFE</code></td>
+            <td><code>HACKTHEPLANET</code></td>
+          </tr>
+          <tr>
+            <td><code>KC_VOLU</code></td>
+            <td><code>KC_VOLD</code></td>
+          </tr>
+        </tbody>
       </table>
       <h4>Finish Assembly</h4>
       <p>Bolt and screw on the spacers, install the bumpers. You're done!</p>
