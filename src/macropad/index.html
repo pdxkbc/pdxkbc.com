@@ -147,23 +147,33 @@
         <img src="solderedpromicro.jpg" width="600"/>
       </figure>
       <h4>Flash the Pro Micro</h4>
-      <p style="font-family: monospace;">
-        git clone git@github.com:qmk/qmk_firmware.git<br />
-        cd qmk_firmware<br />
-        util/linux_install.sh <br />
-        sudo make pdxkbc:default:avrdude<br />
+      <pre>
+        git clone git@github.com:qmk/qmk_firmware.git
+        cd qmk_firmware
+        util/linux_install.sh
+        sudo make pdxkbc:default:avrdude
         # short the RST and GND pins on the pro micro when prompted
-      </p>
+      </pre>
       <p>Also see the github repo in the <a href="#links">Links</a> section.</p>
       <h4>Test the board</h4>
       <p>The default keymap is:</p>
-      <p style="font-family: monospace;">
-        const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = { [0] =
-        LAYOUT( PDXKBCREDDIT, PDXKBCDISCORD, BADGELIFE, HACKTHEPLANET,
-        KC_VOLU, KC_VOLD ), };
-      </p>
+      <table>
+        <tr>
+          <td>PDXKBCREDDIT</td>
+          <td>PDXKBCDISCORD</td>
+        </tr>
+        <tr>
+          <td>BADGELIFE</td>
+          <td>HACKTHEPLANET</td>
+        </tr>
+        <tr>
+          <td>KC_VOLU</td>
+          <td>KC_VOLD</td>
+        </tr>
+      </table>
       <h4>Finish Assembly</h4>
       <p>Bolt and screw on the spacers, install the bumpers. You're done!</p>
+    </main>
 
     <footer>
       <div class="content">
