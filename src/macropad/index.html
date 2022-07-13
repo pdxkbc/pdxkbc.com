@@ -21,10 +21,10 @@
       <nav class="content">
         <img src="/logo.svg" alt="PDXKBC" class="logo" width="28" height="28" />
         <a href="/">Home</a>
-        <a href="/gallery">Gallery</a>
-        <a href="/macropad">Macropad</a>
-        <a href="/resources">Resources</a>
-        <a href="/coc">Conduct</a>
+        <a href="/gallery/">Gallery</a>
+        <a href="/macropad/">Macropad</a>
+        <a href="/resources/">Resources</a>
+        <a href="/coc/">Conduct</a>
         <!-- TODO:  Add link for resources page to header of all pages   -->
       </nav>
     </header>
@@ -71,31 +71,31 @@
           Standoffs:
         </li>
           <ul>
-            <li>4x M4 10+6mm brass Male-Female Spacers</li>
-            <li>4x M3 x 6mm screws</li>
-            <li>4x M3 nuts</li>
+            <li>4&times; M4 10+6mm brass Male-Female Spacers</li>
+            <li>4&times; M3 x 6mm screws</li>
+            <li>4&times; M3 nuts</li>
           </ul>
         <li>
-          1x 5v Arduino Pro Micro
+          1&times; 5v Arduino Pro Micro
         </li>
         <li>
-          6x 1N4148 Diodes
+          6&times; 1N4148 Diodes
         </li>
         <li>
-          4x Rubber Bumpers/Feet
+          4&times; Rubber Bumpers/Feet
         </li>
         <li>
-          6x PCB Mount Switches
+          6&times; PCB Mount Switches
         </li>
         <li>
-          6x 1u Keycaps
+          6&times; 1u Keycaps
         </li>
       </ul>
 
       <h2 id="build_guide">Build Guide</h2>
 
       <h3>Tools</h3>
-      <p>You'll need</p>
+      <p>You'll need:</p>
       <ul>
         <li>A soldering iron and solder</li>
         <li>A phillips screwdriver</li>
@@ -104,7 +104,7 @@
 
       <h3>Assembly</h3>
       <h4>Diodes</h4>
-      <p>Bend your diodes as shown</p>
+      <p>Bend your diodes as shown:</p>
       <figure>
         <img src="bentdiode.jpg" width="600" height="400" alt="Bent Diodes"/>
       </figure>
@@ -151,28 +151,30 @@
         <img src="solderedpromicro.jpg" width="600" height="400" alt="Pro Micro soldered"/>
       </figure>
       <h4>Flash the Pro Micro</h4>
-      <pre>
- git clone git@github.com:qmk/qmk_firmware.git
- cd qmk_firmware
- util/linux_install.sh
- sudo make pdxkbc:default:avrdude
- # short the RST and GND pins on the pro micro when prompted
-      </pre>
-      <p>Also see the github repo in the <a href="#links">Links</a> section.</p>
+      <pre>$ git clone git@github.com:qmk/qmk_firmware.git
+
+$ cd qmk_firmware
+
+$ ./util/linux_install.sh
+
+$ sudo make pdxkbc:default:avrdude
+
+# short the RST and GND pins on the pro micro when prompted</pre>
+      <p>Also see the GitHub repo in the <a href="#links">Links</a> section.</p>
       <h4>Test the board</h4>
       <p>The default keymap is:</p>
-      <table>
+      <table class="keymap">
         <tr>
-          <td>PDXKBCREDDIT</td>
-          <td>PDXKBCDISCORD</td>
+          <td><code>PDXKBCREDDIT</code></td>
+          <td><code>PDXKBCDISCORD</code></td>
         </tr>
         <tr>
-          <td>BADGELIFE</td>
-          <td>HACKTHEPLANET</td>
+          <td><code>BADGELIFE</code></td>
+          <td><code>HACKTHEPLANET</code></td>
         </tr>
         <tr>
-          <td>KC_VOLU</td>
-          <td>KC_VOLD</td>
+          <td><code>KC_VOLU</code></td>
+          <td><code>KC_VOLD</code></td>
         </tr>
       </table>
       <h4>Finish Assembly</h4>
