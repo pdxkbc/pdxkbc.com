@@ -54,6 +54,7 @@ hr {
 .content,
 main {
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
   flex: auto;
@@ -157,9 +158,41 @@ figure img {
   border-radius: 8px;
 }
 
+pre {
+  background: var(--color-main-fg);
+  color: var(--color-main-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  word-break: break-all;
+}
+
+code {
+  font-size: 0.9em;
+}
+
 :focus {
   outline: 2px solid;
   outline-offset: 2px;
+}
+
+.keymap {
+  border: 2px solid;
+  box-shadow: 0 2px 0 0 currentColor;
+  border-radius: 4px;
+}
+
+.keymap th,
+.keymap td {
+  border: 2px solid;
+  padding: 0.5rem;
+  border-radius: 2px;
+}
+
+.keymap code {
+  font-size: 0.95rem;
+  word-break: break-all;
 }
 
 @media (min-width: 600px) {
@@ -175,29 +208,9 @@ figure img {
     margin: 0;
     margin-left: 1rem;
   }
-}
 
-pre {
-  background: var(--color-main-fg);
-  color: var(--color-main-bg);
-  border-radius: 8px;
-  padding: 1rem;
-  white-space: pre-wrap;
-  font-size: 1rem;
-}
-
-.keymap {
-  border-spacing: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  border: 2px solid;
-  box-shadow: 4px 4px 0 0 currentColor;
-}
-
-.keymap th,
-.keymap td {
-  padding: 1rem;
-  border: 2px solid;
-  border-radius: 4px;
-  box-shadow: inset 0 -4px 0 0 currentColor;
+  .keymap code {
+    font-size: 1rem;
+    word-break: break-all;
+  }
 }
