@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <meta name="author" content="Brian Mock" />
+    <meta name="description" content="Resources - PDXKBC" />
+    <meta name="og:description" content="Resources - PDXKBC" />
+    <meta name="og:title" content="Resources - PDXKBC" />
+    <title>Resources - PDXKBC</title>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@wavebeem" />
+    <meta name="twitter:creator" content="@wavebeem" />
+    <meta name="og:image" content="https://www.pdxkbc.com/logo.jpg" />
+  </head>
+  <body>
+    <header>
+      <nav class="content">
+        <img src="/logo.svg" alt="PDXKBC" class="logo" width="28" height="28" />
+        <a href="/">Home</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/macropad">Macropad</a>
+        <a href="/resources">Resources</a>
+        <a href="/coc">Conduct</a>
+        <!-- TODO:  Add link for resources page to header of all pages   -->
+      </nav>
+    </header>
+
+    <main>
+      <h1>PDXKBC Macropad</h1>
+      <ul>
+        <li><a href="#macropad">Overview</a></li>
+	<li><a href="#links">Links</a></li>
+        <li><a href="#parts_list">Parts List</a></li>
+        <li><a href="#build_guide">Build Guide</a></li>
+      </ul>
+
+      <h2 id="macropad">Overview</h2>
+      <figure>
+        <img src="macropad.jpg" width="600" height="657" />
+        <figcaption>PDXKBC macropad designed and built by Franklin</figcaption>
+      </figure>
+
+      <h2 id="links">Links</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/fharding1/pdxkbc-badge"
+            >Hardware GitHub repository</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/pdxkbc"
+            >QMK GitHub repository</a
+          >
+        </li>
+      </ul>
+
+      <h2 id="parts_list">Parts List</h2>
+      <figure>
+        <img src="materials.jpg" width="600" height="400" alt="Parts needed to build the macropad"/>
+      </figure>
+      <ul>
+        <li>
+          Badge and Case PCBs (See <a href="#links">Links</a> section for source files)
+        </li>
+        <li>
+          Standoffs:
+        </li>
+          <ul>
+            <li>4x M4 10+6mm brass Male-Female Spacers</li>
+            <li>4x M3 x 6mm screws</li>
+            <li>4x M3 nuts</li>
+          </ul>
+        <li>
+          1x 5v Arduino Pro Micro
+        </li>
+        <li>
+          6x 1N4148 Diodes
+        </li>
+        <li>
+          4x Rubber Bumpers/Feet
+        </li>
+        <li>
+          6x PCB Mount Switches
+        </li>
+        <li>
+          6x 1u Keycaps
+        </li>
+      </ul>
+
+      <h2 id="build_guide">Build Guide</h2>
+
+      <h3>Tools</h3>
+      <p>You'll need</p>
+      <ul>
+        <li>A soldering iron and solder</li>
+        <li>A phillips screwdriver</li>
+        <li>Flush cutters</li>
+      </ul>
+
+      <h3>Assembly</h3>
+      <h4>Diodes</h4>
+      <p>Bend your diodes as shown</p>
+      <figure>
+        <img src="bentdiode.jpg" width="600" height="400" alt="Bent Diodes"/>
+      </figure>
+      <p>
+        Place your diodes with the black stripe on the diode facing the white
+        stripe on the PCB, slightly bend the legs to prevent the diode from
+        falling out.
+      </p>
+      <figure>
+        <img src="placeddiode.jpg" width="600" height="400" alt="A diode in place"/>
+      </figure>
+      <figure>
+        <img src="diodes.jpg" width="600" height="400" alt="Diodes held in place with bent legs"/>
+      </figure>
+      <p>Solder the diodes, and trim the legs with flush cutters.</p>
+      <figure>
+        <img src="trimmeddiodes.jpg" width="600" height="400" alt="Diodes soldered and trimmed"/>
+      </figure>
+      <h4>Switches & Pro Micro</h4>
+      <p>Place and solder the lower four switches</p>
+      <figure>
+        <img src="fourswitches.jpg" width="600" height="400" alt="Lower four switches soldered in place"/>
+      <figure>
+      <p>
+        Tack on the two pin headers, fiddle with them until they're straight
+        and the pro micro fits on.
+      </p>
+      <figure>
+        <img src="tackedheader.jpg" width="600" height="400" alt="Headers tacked into place"/>
+      </figure>
+      <figure>
+        <img src="testfit.jpg" width="600" height="400" alt="Pro Micro aligned on the headers"/>
+      <figure>
+      <p>Solder the pin header.</p>
+      <figure>
+        <img src="solderedheaders.jpg" width="600" height="400" alt="Headers soldered"/>
+      </figure>
+      <p>Solder the top two switches.</p>
+      <figure>
+        <img src="twoswitches.jpg" width="600" height="400" alt="Top two switches soldered"/>
+      </figure>
+      <p>Solder the Pro Micro onto the headers</p>
+      <figure>
+        <img src="solderedpromicro.jpg" width="600" height="400" alt="Pro Micro soldered"/>
+      </figure>
+      <h4>Flash the Pro Micro</h4>
+      <pre>
+ git clone git@github.com:qmk/qmk_firmware.git
+ cd qmk_firmware
+ util/linux_install.sh
+ sudo make pdxkbc:default:avrdude
+ # short the RST and GND pins on the pro micro when prompted
+      </pre>
+      <p>Also see the github repo in the <a href="#links">Links</a> section.</p>
+      <h4>Test the board</h4>
+      <p>The default keymap is:</p>
+      <table>
+        <tr>
+          <td>PDXKBCREDDIT</td>
+          <td>PDXKBCDISCORD</td>
+        </tr>
+        <tr>
+          <td>BADGELIFE</td>
+          <td>HACKTHEPLANET</td>
+        </tr>
+        <tr>
+          <td>KC_VOLU</td>
+          <td>KC_VOLD</td>
+        </tr>
+      </table>
+      <h4>Finish Assembly</h4>
+      <p>Bolt and screw on the spacers, install the bumpers. You're done!</p>
+    </main>
+
+    <footer>
+      <div class="content">
+        &copy; 2021
+        <a href="https://github.com/pdxkbc">PDXKBC</a>
+      </div>
+    </footer>
+  </body>
+</html>
